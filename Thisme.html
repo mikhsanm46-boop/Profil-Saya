@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Profesional - Muhammad Ikhsan Maulana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ganti font agar lebih modern */
+        }
+
+        body {
+            background: #eef2f5; /* Ganti latar belakang yang sedikit lebih terang/lembut */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden; /* Mencegah scroll horizontal selama animasi */
+        }
+
+        /* Animasi masuk untuk kartu */
+        @keyframes fadeInSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 30px; /* Radius lebih melengkung untuk tampilan modern */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            padding: 40px; /* Padding lebih luas */
+            text-align: center;
+            animation: fadeInSlideUp 0.8s ease-out forwards; /* Terapkan animasi masuk */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Sedikit angkat saat hover */
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15); /* Bayangan lebih dalam saat hover */
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #007bff; /* Bingkai lebih tebal */
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,123,255,0.3); /* Tambahkan bayangan ke gambar */
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 20px; /* Jarak lebih besar setelah nama */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .skill-badge {
+            background: #e7f3ff;
+            color: #007bff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        .services {
+            text-align: left;
+            background: #fdfdfd;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 1px solid #eee;
+        }
+
+        .services h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        
+        .services h2::before {
+             content: "🛠️ "; /* Tambahkan ikon untuk h2 */
+             margin-right: 8px;
+        }
+
+        .services ul {
+            list-style: none;
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .services li::before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Animasi berdenyut untuk tombol */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite ease-in-out; /* Terapkan animasi berdenyut */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Efek hover yang lebih menarik */
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 1;
+            box-shadow: 0 7px 14px rgba(0,0,0,0.2);
+            animation: none; /* Matikan animasi pulse saat hover */
+        }
+
+        /* Kilatan cahaya saat hover */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: all 0.6s ease;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+
+        .btn:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .whatsapp { background-color: #25D366; animation-delay: 0s; }
+        .facebook { background-color: #1877F2; animation-delay: 0.2s; }
+        .instagram { background-color: #E4405F; animation-delay: 0.4s; }
+        .linkedin { background-color: #0077B5; animation-delay: 0.6s; }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://img.sanishtech.com/u/a620021a03deb7eb10fbe489e2099c79.jpg" alt="Muhammad Ikhsan Maulana" class="profile-img">
+        
+        <h1>Muhammad Ikhsan Maulana</h1>
+        <div class="skills">
+            <span class="skill-badge">Analisa Market</span>
+            <span class="skill-badge">Teknisi HP</span>
+            <span class="skill-badge">Programmer</span>
+            <span class="skill-badge">UI/UX Design</span>
+            <span class="skill-badge">Web Design</span>
+        </div>
+
+        <div class="services">
+            <h2>Menerima Jasa:</h2>
+            <ul>
+                <li>Pembuatan Page Pribadi</li>
+                <li>Pembuatan Website</li>
+                <li>Servis Handphone</li>
+                <li>Pembuatan Bot</li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <a href="https://wa.me/6282324515844" class="btn whatsapp" target="_blank">Hubungi via WhatsApp</a>
+            <a href="https://www.facebook.com/share/1CeFR6Ayfy/" class="btn facebook" target="_blank">Kunjungi Facebook</a>
+            <a href="https://www.instagram.com/mikhsanm3115?igsh=czltODRvcnFkNXUx" class="btn instagram" target="_blank">Lihat Instagram</a>
+            <a href="https://www.linkedin.com/in/muhammad-ikhsan-maulana-2833851a4" class="btn linkedin" target="_blank">Profil LinkedIn</a>
+        </div>
+    </div>
+
+</body>
+</html>
