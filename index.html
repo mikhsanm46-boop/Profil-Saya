@@ -9,20 +9,19 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ganti font agar lebih modern */
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: #eef2f5; /* Ganti latar belakang yang sedikit lebih terang/lembut */
+            background: #eef2f5;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            overflow-x: hidden; /* Mencegah scroll horizontal selama animasi */
+            overflow-x: hidden;
         }
 
-        /* Animasi masuk untuk kartu */
         @keyframes fadeInSlideUp {
             0% {
                 opacity: 0;
@@ -38,17 +37,17 @@
             background: white;
             width: 100%;
             max-width: 450px;
-            border-radius: 30px; /* Radius lebih melengkung untuk tampilan modern */
+            border-radius: 30px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            padding: 40px; /* Padding lebih luas */
+            padding: 40px;
             text-align: center;
-            animation: fadeInSlideUp 0.8s ease-out forwards; /* Terapkan animasi masuk */
+            animation: fadeInSlideUp 0.8s ease-out forwards;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-5px); /* Sedikit angkat saat hover */
-            box-shadow: 0 20px 45px rgba(0,0,0,0.15); /* Bayangan lebih dalam saat hover */
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
         }
 
         .profile-img {
@@ -56,15 +55,15 @@
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid #007bff; /* Bingkai lebih tebal */
+            border: 6px solid #007bff;
             margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,123,255,0.3); /* Tambahkan bayangan ke gambar */
+            box-shadow: 0 5px 15px rgba(0,123,255,0.3);
         }
 
         h1 {
             font-size: 24px;
             color: #222;
-            margin-bottom: 20px; /* Jarak lebih besar setelah nama */
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -110,7 +109,7 @@
         }
         
         .services h2::before {
-             content: "🛠️ "; /* Tambahkan ikon untuk h2 */
+             content: "🛠️ ";
              margin-right: 8px;
         }
 
@@ -134,7 +133,6 @@
             gap: 12px;
         }
 
-        /* Animasi berdenyut untuk tombol */
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -160,19 +158,17 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            animation: pulse 2s infinite ease-in-out; /* Terapkan animasi berdenyut */
+            animation: pulse 2s infinite ease-in-out;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        /* Efek hover yang lebih menarik */
         .btn:hover {
             transform: translateY(-2px);
             opacity: 1;
             box-shadow: 0 7px 14px rgba(0,0,0,0.2);
-            animation: none; /* Matikan animasi pulse saat hover */
+            animation: none;
         }
 
-        /* Kilatan cahaya saat hover */
         .btn::after {
             content: '';
             position: absolute;
@@ -203,7 +199,8 @@
 <body>
 
     <div class="card">
-        <img src="https://img.sanishtech.com/u/a620021a03deb7eb10fbe489e2099c79.jpg" alt="Muhammad Ikhsan Maulana" class="profile-img">
+        <!-- GAMBAR SUDAH DIGANTI DENGAN LINK DARI IMGBB -->
+        <img src="https://i.ibb.co/zWxRFDDW/e005e55d-4949-4105-8094-c8e2852ec8d4.jpg" alt="Muhammad Ikhsan Maulana" class="profile-img">
         
         <h1>Muhammad Ikhsan Maulana</h1>
         <div class="skills">
